@@ -82,6 +82,48 @@
         codeTextarea.addEventListener('input', function() {
             localStorage.setItem(localStorageKey, codeTextarea.value);
         });
+
+        // Hint functionality
+        const getHintBtn = document.getElementById('getHintBtn');
+        const hintDisplay = document.getElementById('hintDisplay');
+        // const lessonId = '{{ lesson.id }}'; // Already defined above for auto-save
+
+        if (getHintBtn) {
+            getHintBtn.addEventListener('click', function() {
+                hintDisplay.style.display = 'block';
+                hintDisplay.innerHTML = '<i>Fetching a hint, please wait...</i>';
+                getHintBtn.disabled = true; // Disable button while fetching
+
+                fetch(`/lesson/${lessonId}/get_hint`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        // If CSRF protection is enabled, you'd need to include the token here
+                    }
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.hint) {
+                        // Sanitize or carefully display HTML if hints can contain it.
+                        // For now, assuming plain text.
+                        hintDisplay.innerText = data.hint; 
+                        getHintBtn.innerText = 'Hint Received'; // Change button text
+                        // Optionally, keep button disabled or re-enable after a delay
+                    } else if (data.error) {
+                        hintDisplay.innerHTML = `<span style="color: red;">Error: ${data.error}</span>`;
+                        getHintBtn.disabled = false; // Re-enable if error
+                    } else {
+                        hintDisplay.innerText = 'No hint available at this moment.';
+                        getHintBtn.disabled = false; // Re-enable
+                    }
+                })
+                .catch(error => {
+                    console.error('Error fetching hint:', error);
+                    hintDisplay.innerHTML = '<span style="color: red;">Could not connect to the hint service. Please check your connection and try again.</span>';
+                    getHintBtn.disabled = false; // Re-enable on network error
+                });
+            });
+        }
     });
   </script>
 {% endblock %}

@@ -98,3 +98,32 @@ textarea#code {
 .results-container h2 {
     margin-top: 30px;
 }
+
+/* Hint section styles */
+.hint-section {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #f9f9f9;
+    border: 1px solid #eee;
+    border-radius: 5px;
+}
+
+#hintDisplay {
+    white-space: pre-wrap; /* To respect newlines from the AI hint */
+    font-style: italic;
+    color: #333;
+    line-height: 1.6;
+    background-color: #eef6ff; /* Default background for hint display */
+    padding: 10px; /* Default padding */
+    border-radius: 4px; /* Default border-radius */
+}
+
+#getHintBtn.btn-info { /* Style for the hint button itself */
+    background-color: #17a2b8;
+    border-color: #17a2b8;
+    color: white;
+}
+#getHintBtn.btn-info:hover {
+    background-color: #138496;
+    border-color: #117a8b;
+}
