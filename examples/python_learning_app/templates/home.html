@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block title %}Lessons - Python Learning Platform{% endblock %}
+{% block content %}
+  <h1>Available Lessons</h1>
+  <ul class="list-group">
+    {% for lesson in lessons %}
+      <li class="list-group-item">
+        <a href="{{ url_for('view_lesson', lesson_id=lesson.id) }}">{{ lesson.title }}</a>
+      </li>
+    {% else %}
+      <li class="list-group-item">No lessons available yet.</li>
+    {% endfor %}
+  </ul>
+{% endblock %}

@@ -1,0 +1,12 @@
+{
+  "id": "variables-and-arithmetic",
+  "title": "Lesson 1: Variables and Basic Arithmetic",
+  "description": "Learn how to assign variables and perform basic mathematical operations in Python.",
+  "problem": "Write a Python function called `add` that takes two arguments, `a` and `b`, and returns their sum.",
+  "boilerplate": "def add(a, b):\n  # Your code here\n  pass",
+  "tests": [
+    {"expression": "add(1, 2)", "expected": 3},
+    {"expression": "add(-5, 10)", "expected": 5},
+    {"expression": "add(0, 0)", "expected": 0}
+  ]
+}
