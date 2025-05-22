@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% block title %}{{ lesson.title }} - Python Learning Platform{% endblock %}
+{% block content %}
+  <h1>{{ lesson.title }}</h1>
+  <p>{{ lesson.description }}</p>
+  <h2>Problem:</h2>
+  <p>{{ lesson.problem }}</p>
+  
+  <form method="POST" action="{{ url_for('submit_lesson', lesson_id=lesson.id) }}">
+    <div class="form-group">
+      <label for="code">Your Code:</label>
+      <textarea class="form-control" id="code" name="code" rows="10" style="font-family: monospace;">{{ code or lesson.boilerplate }}</textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit Code</button>
+  </form>
+  
+  {% if error_message %}
+    <div class="alert alert-danger mt-4">
+      <strong>Error during execution:</strong> {{ error_message }}
+    </div>
+  {% endif %}
+
+  {% if results %}
+    <h2 class="mt-4">Results:</h2>
+    {% for result in results %}
+      <div class="alert {% if result.passed %}alert-success{% elif result.error %}alert-warning{% else %}alert-danger{% endif %}" role="alert">
+        <strong>Test:</strong> <code>{{ result.expression }}</code>
+        <br>
+        Expected: <code>{{ result.expected }}</code>
+        <br>
+        {% if result.error %}
+          Error evaluating test: <code>{{ result.error }}</code>
+        {% else %}
+          Actual: <code>{{ result.actual }}</code>
+          <br>
+          Status: {% if result.passed %}<strong>PASS</strong>{% else %}<strong>FAIL</strong>{% endif %}
+        {% endif %}
+      </div>
+    {% endfor %}
+  {% endif %}
+{% endblock %}
