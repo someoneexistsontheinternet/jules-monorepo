@@ -10,6 +10,23 @@ This application is a simple, Flask-based interactive platform for learning Pyth
 - User code is automatically saved in the browser's local storage as you type.
 - Simple and clean user interface with custom styling.
 - Easy to add new lessons via JSON files.
+- AI-powered hints: After 3 unsuccessful attempts on a lesson, a hint option appears, providing guidance from an AI tutor (powered by OpenAI's GPT model).
+
+## Configuration
+
+### AI Hint System (Optional)
+
+This platform includes an AI-powered hint system that uses the OpenAI API to provide guidance after multiple failed attempts on a lesson. To enable this feature, you need to:
+
+1.  Obtain an API key from [OpenAI](https://openai.com/apis/).
+2.  Set the `OPENAI_API_KEY` environment variable in your terminal before running the Flask application:
+
+    ```bash
+    export OPENAI_API_KEY='your_openai_api_key_here'
+    ```
+    (On Windows, use `set OPENAI_API_KEY=your_openai_api_key_here`)
+
+If this key is not set, the hint feature will be disabled (the button may still appear, but requests for hints will result in an error message indicating a configuration issue).
 
 ## Setup and Run
 
