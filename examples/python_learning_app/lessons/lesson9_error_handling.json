@@ -1,0 +1,14 @@
+{
+  "id": "error-handling",
+  "title": "Lesson 9: Error Handling (try/except)",
+  "description": "Learn how to handle potential errors in your code gracefully using `try` and `except` blocks. This helps prevent your program from crashing and allows you to manage exceptions.",
+  "problem": "Write a Python function `divide_numbers(numerator, denominator)` that attempts to divide `numerator` by `denominator`. If the division is successful, it should return the result. If a `ZeroDivisionError` occurs, it should return the string 'Error: Cannot divide by zero!'. If any other `TypeError` occurs (e.g., if inputs are not numbers), it should return 'Error: Invalid input types!'.",
+  "boilerplate": "def divide_numbers(numerator, denominator):\n  # Your code here\n  pass",
+  "tests": [
+    {"expression": "divide_numbers(10, 2)", "expected": 5.0},
+    {"expression": "divide_numbers(5, 0)", "expected": "Error: Cannot divide by zero!"},
+    {"expression": "divide_numbers(10, 'a')", "expected": "Error: Invalid input types!"},
+    {"expression": "divide_numbers('b', 2)", "expected": "Error: Invalid input types!"},
+    {"expression": "divide_numbers(0, 5)", "expected": 0.0}
+  ]
+}

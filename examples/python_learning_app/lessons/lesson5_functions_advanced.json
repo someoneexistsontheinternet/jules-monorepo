@@ -1,0 +1,14 @@
+{
+  "id": "functions-advanced",
+  "title": "Lesson 5: Functions II - Advanced",
+  "description": "Explore more advanced function concepts like default arguments, variable number of arguments (*args), and keyword arguments (**kwargs).",
+  "problem": "Write a Python function `greet_user(name, greeting='Hello')` that takes a `name` and an optional `greeting` and returns a formatted string. If no greeting is provided, it should default to 'Hello'. Then, write a function `sum_all(*numbers)` that takes a variable number of numerical arguments and returns their sum.",
+  "boilerplate": "def greet_user(name, greeting='Hello'):\n  # Your code here\n  pass\n\ndef sum_all(*numbers):\n  # Your code here\n  pass",
+  "tests": [
+    {"expression": "greet_user('Bob')", "expected": "Hello, Bob"},
+    {"expression": "greet_user('Charlie', greeting='Hi')", "expected": "Hi, Charlie"},
+    {"expression": "sum_all(1, 2, 3)", "expected": 6},
+    {"expression": "sum_all(10, 20, 30, 40)", "expected": 100},
+    {"expression": "sum_all()", "expected": 0}
+  ]
+}

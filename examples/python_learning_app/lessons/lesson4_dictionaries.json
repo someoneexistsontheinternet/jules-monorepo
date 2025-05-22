@@ -1,0 +1,13 @@
+{
+  "id": "dictionaries",
+  "title": "Lesson 4: Dictionaries",
+  "description": "Dictionaries are unordered collections of key-value pairs. Learn how to create dictionaries, access values, add new pairs, and iterate over them.",
+  "problem": "Write a Python function `get_population(city_populations, city_name)` that takes a dictionary `city_populations` (where keys are city names and values are populations) and a `city_name`. It should return the population of the `city_name` if it exists, or the string 'City not found' if it doesn't. Then, write a function `add_city_population(city_populations, city_name, population)` that adds a new city and its population to the dictionary and returns the modified dictionary.",
+  "boilerplate": "def get_population(city_populations, city_name):\n  # Your code here\n  pass\n\ndef add_city_population(city_populations, city_name, population):\n  # Your code here\n  pass",
+  "tests": [
+    {"expression": "get_population({'New York': 8400000, 'Los Angeles': 3900000}, 'New York')", "expected": 8400000},
+    {"expression": "get_population({'New York': 8400000, 'Los Angeles': 3900000}, 'Chicago')", "expected": "City not found"},
+    {"expression": "add_city_population({'London': 8900000}, 'Paris', 2100000)", "expected": {"London": 8900000, "Paris": 2100000}},
+    {"expression": "add_city_population({}, 'Tokyo', 37000000)", "expected": {"Tokyo": 37000000}}
+  ]
+}

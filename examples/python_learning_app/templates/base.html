@@ -4,10 +4,18 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{% block title %}Python Learning Platform{% endblock %}</title>
+    <!-- Bootstrap (keeping it for now for basic layout, but custom styles will override/enhance) -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
   </head>
   <body>
-    <div class="container mt-4">
+    <nav class="navbar">
+      <div class="container-fluid d-flex justify-content-center"> {# Use container-fluid for full width, d-flex for centering #}
+        <a class="navbar-brand" href="{{ url_for('home') }}" style="color: #fff; font-size: 1.5rem;">Python Learning Platform</a>
+        {# Add other nav links here if needed later #}
+      </div>
+    </nav>
+    <div class="container mt-4"> {# This is the main content container from bootstrap, styled by our CSS #}
       {% block content %}{% endblock %}
     </div>
   </body>
