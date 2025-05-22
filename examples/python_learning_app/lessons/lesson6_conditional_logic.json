@@ -1,0 +1,15 @@
+{
+  "id": "conditional-logic",
+  "title": "Lesson 6: Conditional Logic",
+  "description": "Learn to control the flow of your program using `if`, `elif`, and `else` statements to make decisions based on conditions.",
+  "problem": "Write a Python function `check_age(age)` that takes an integer `age`. If age is less than 18, it should return 'Minor'. If age is between 18 and 64 (inclusive), it should return 'Adult'. If age is 65 or greater, it should return 'Senior'.",
+  "boilerplate": "def check_age(age):\n  # Your code here\n  pass",
+  "tests": [
+    {"expression": "check_age(10)", "expected": "Minor"},
+    {"expression": "check_age(18)", "expected": "Adult"},
+    {"expression": "check_age(35)", "expected": "Adult"},
+    {"expression": "check_age(64)", "expected": "Adult"},
+    {"expression": "check_age(65)", "expected": "Senior"},
+    {"expression": "check_age(100)", "expected": "Senior"}
+  ]
+}

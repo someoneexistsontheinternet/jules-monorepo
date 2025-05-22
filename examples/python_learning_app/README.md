@@ -1,6 +1,15 @@
 # Interactive Python Learning Platform
 
-This application is a simple, Flask-based interactive platform for learning Python. Users can browse lessons, write Python code to solve problems, and get immediate feedback based on predefined tests.
+This application is a simple, Flask-based interactive platform for learning Python. Users can browse lessons, write Python code to solve problems, and get immediate feedback based on predefined tests. It currently features 10 lessons covering fundamental Python concepts from variables and strings to functions, file I/O, and basic external library usage.
+
+## Features
+
+- Interactive Python coding challenges.
+- 10 lessons covering topics from variables to basic external library usage.
+- Instant feedback by running code against predefined tests.
+- User code is automatically saved in the browser's local storage as you type.
+- Simple and clean user interface with custom styling.
+- Easy to add new lessons via JSON files.
 
 ## Setup and Run
 

@@ -1,0 +1,14 @@
+{
+  "id": "strings-and-manipulation",
+  "title": "Lesson 2: Strings and Manipulation",
+  "description": "Strings are used to represent text. Learn about common string operations like concatenation, slicing, and methods.",
+  "problem": "Write a Python function `greet(name)` that takes a string `name` and returns a personalized greeting 'Hello, [name]!'. Then, write a function `get_length(text)` that returns the length of the given `text`.",
+  "boilerplate": "def greet(name):\n  # Your code here\n  pass\n\ndef get_length(text):\n  # Your code here\n  pass",
+  "tests": [
+    {"expression": "greet('Alice')", "expected": "Hello, Alice!"},
+    {"expression": "greet('World')", "expected": "Hello, World!"},
+    {"expression": "get_length('Python')", "expected": 6},
+    {"expression": "get_length('')", "expected": 0},
+    {"expression": "get_length('  ')", "expected": 2}
+  ]
+}

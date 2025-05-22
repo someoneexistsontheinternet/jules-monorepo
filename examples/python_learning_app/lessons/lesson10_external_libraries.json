@@ -1,0 +1,13 @@
+{
+  "id": "external-libraries-requests",
+  "title": "Lesson 10: Using External Libraries (requests)",
+  "description": "Python's power comes from its vast collection of external libraries. This lesson introduces how to use one such library, `requests`, to fetch data from a public API. (Note: This lesson requires internet access for the `requests` library to function).",
+  "problem": "Write a Python function `fetch_json_data(url)` that takes a URL, makes a GET request to it using the `requests` library, and returns the JSON response as a Python dictionary. If the request fails (e.g., non-200 status code) or the response is not valid JSON, it should return `None`. You'll need to import the `requests` library.",
+  "boilerplate": "import requests\n\ndef fetch_json_data(url):\n  # Your code here\n  # Hint: Use requests.get(url)\n  # Check response.status_code\n  # Use response.json() to parse JSON\n  pass",
+  "tests": [
+    {"expression": "isinstance(fetch_json_data('https://jsonplaceholder.typicode.com/todos/1'), dict) if 'requests' in globals() or 'requests' in locals() else True", "expected": true},
+    {"expression": "fetch_json_data('https://jsonplaceholder.typicode.com/todos/1').get('id') if 'requests' in globals() or 'requests' in locals() else 1", "expected": 1},
+    {"expression": "fetch_json_data('https://jsonplaceholder.typicode.com/nonexistenturl') is None if 'requests' in globals() or 'requests' in locals() else True", "expected": true},
+    {"expression": "fetch_json_data('https://google.com') is None if 'requests' in globals() or 'requests' in locals() else True", "expected": true}
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "id": "classes-intro",
+  "title": "Lesson 8: Introduction to Classes",
+  "description": "Learn the basics of Object-Oriented Programming (OOP) with classes and objects. Define a simple class, create instances (objects), and add methods.",
+  "problem": "Define a class `Dog` with an `__init__` method that takes `name` and `breed` as arguments and stores them as instance attributes. Add a method `bark()` to the `Dog` class that returns the string 'Woof!'.",
+  "boilerplate": "class Dog:\n  # Your code here\n  pass",
+  "tests": [
+    {"expression": "(lambda: (d := Dog('Buddy', 'Golden Retriever'), d.name))()[1]", "expected": "Buddy"},
+    {"expression": "(lambda: (d := Dog('Lucy', 'Poodle'), d.breed))()[1]", "expected": "Poodle"},
+    {"expression": "(lambda: (d := Dog('Max', 'Labrador'), d.bark()))()[1]", "expected": "Woof!"}
+  ]
+}

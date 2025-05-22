@@ -1,0 +1,13 @@
+{
+  "id": "file-io",
+  "title": "Lesson 7: Basic File I/O",
+  "description": "Learn how to read from and write to files. This lesson covers opening files, reading content, and writing content.",
+  "problem": "Write a Python function `read_file_content(filepath)` that takes a string `filepath`, reads the content of the file, and returns it as a string. For this problem, assume the file 'sample.txt' will exist with content 'Hello from sample.txt!'. Then, write a function `write_to_file(filepath, content)` that writes the given `content` string to the specified `filepath`. This function should create the file if it doesn't exist or overwrite it if it does.",
+  "boilerplate": "# For testing read_file_content, we will create a dummy file.\n# You would normally not include file creation in the solution itself.\ndef create_dummy_file(filepath, content):\n  with open(filepath, 'w') as f:\n    f.write(content)\n\ndef read_file_content(filepath):\n  # Your code here\n  pass\n\ndef write_to_file(filepath, content):\n  # Your code here\n  # After writing, you might want to read it back to confirm for testing purposes,\n  # or rely on the test cases to verify.\n  pass",
+  "tests": [
+    {"expression": "(create_dummy_file('sample.txt', 'Hello from sample.txt!'), read_file_content('sample.txt'))[1]", "expected": "Hello from sample.txt!"},
+    {"expression": "(create_dummy_file('empty.txt', ''), read_file_content('empty.txt'))[1]", "expected": ""},
+    {"expression": "(write_to_file('output.txt', 'Test content'), read_file_content('output.txt'))[1]", "expected": "Test content"},
+    {"expression": "(write_to_file('output.txt', 'Overwrite'), read_file_content('output.txt'))[1]", "expected": "Overwrite"}
+  ]
+}
