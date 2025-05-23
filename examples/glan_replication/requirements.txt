@@ -1,0 +1,5 @@
+openai
+python-dotenv
+# pandas (will be useful for data handling later)
+# numpy
+# scikit-learn (for potential embedding/similarity checks in decontamination)
